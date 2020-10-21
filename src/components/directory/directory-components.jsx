@@ -13,33 +13,33 @@ class Direcroty extends React.Component {
               title: 'toys',
               imageUrl: 'https://images.unsplash.com/photo-1535294435445-d7249524ef2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
               id: 1,
-              linkUrl: 'shop/hats'
+              linkUrl: 'toys'
             },
             {
               title: 'beds',
               imageUrl: 'https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
               id: 2,
-              linkUrl: 'shop/jackets'
+              linkUrl: 'beds'
             },
             {
               title: 'collars',
               imageUrl: 'https://images.unsplash.com/photo-1532983523122-9f7448e9e6cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60g',
               id: 3,
-              linkUrl: 'shop/sneakers'
+              linkUrl: 'collars'
             },
             {
               title: 'clothes',
               imageUrl: 'https://images.unsplash.com/photo-1583337260546-28b6bf66d004?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
               size: 'large',
               id: 4,
-              linkUrl: 'shop/womens'
+              linkUrl: 'clothes'
             },
             {
               title: 'cakes',
               imageUrl: 'https://images.unsplash.com/photo-1578729370305-131f65fbd716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
               size: 'large',
               id: 5,
-              linkUrl: 'shop/mens'
+              linkUrl: 'cakes'
             }
           ]
     }
@@ -47,8 +47,8 @@ class Direcroty extends React.Component {
   render() {
       return (
         <div className='directory-menu'>
-            {this.state.sections.map(({title, imageUrl, id, size}) => (
-                <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+            {this.state.sections.map(({id, ...otherSectionProps}) => (
+                <MenuItem key={id} {...otherSectionProps}/>
             ))}
         </div>
       )
